@@ -1,1 +1,28 @@
-<p>heroe works!</p>
+<mat-progress-bar
+  mode="query"
+  *ngIf="!heroe; else heroeLoaded"
+></mat-progress-bar>
+
+<ng-template #heroeLoaded>
+  <div fxLayoutGap="30px" fxLayout="row" fxLayout.xs="column">
+    <div fxFlex="50" fxLayout="column" fxLayoutAlign="center center">
+      <h1>
+        {{ heroe.superhero }} <small>- {{ heroe.alter_ego }}</small>
+      </h1>
+      <mat-divider class="dividerImg"></mat-divider>
+      <br />
+      <img [src]="heroe | imagen" />
+    </div>
+    <div fxFlex="50">
+      <h1>{{ heroe.publisher }}</h1>
+      <mat-divider></mat-divider>
+      <br />
+      <mat-list>
+        <mat-list-item>{{ heroe.first_appearance }}</mat-list-item>
+        <mat-list-item>{{ heroe.characters }}</mat-list-item>
+        <mat-list-item>{{ heroe.publisher }}</mat-list-item>
+      </mat-list>
+      <button mat-button color="warn" (click)="volverListado()">Volver al listado</button>
+    </div>
+  </div>
+</ng-template>
