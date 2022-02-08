@@ -16,22 +16,21 @@ export class BuscarComponent implements OnInit {
 
   constructor(private heroesService: HeroesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {}
 
   buscando() {
     this.heroesService
-      .getSugerencias(this.termino)
-      .subscribe((heroes) => (this.heroes = heroes));
+    .getSugerencias(this.termino)
+    .subscribe((heroes) => (this.heroes = heroes));
   }
 
   opcionSeleccionada(event: MatAutocompleteSelectedEvent) {
-    console.log(event);
+    console.log(event.option);
     if (!event.option.value) {
       this.heroeNoEncontrado = true;
     } else {
       const heroe: Heroe = event.option.value;
       this.termino = heroe.superhero;
-
       this.heroeSeleccionado = heroe;
       this.heroeNoEncontrado = false;
     }

@@ -24,12 +24,21 @@
           {{ heroe.superhero }}
         </mat-option>
 
-        <mat-option *ngIf="heroes.length === 0" [value]="">
+        <mat-option *ngIf="heroes.length === 0 && termino !== ''" [value]="">
           No se encontró el Heroe '{{ termino }}'
         </mat-option>
       </mat-autocomplete>
     </mat-form-field>
 
+    <div *ngIf="heroeSeleccionado" fxFlex>
+      <app-heroes-card
+        [heroe]="heroeSeleccionado"
+        fxFlex.xs="65"
+        fxFlex.sm="35"
+        fxFlex="25"
+
+      ></app-heroes-card>
+    </div>
     <p *ngIf="heroeNoEncontrado; else hayHeroe">
       No hemos encontrado el Heroe buscado
     </p>
