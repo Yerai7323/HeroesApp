@@ -13,6 +13,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ListadoComponent } from './pages/listado/listado.component';
 import { HeroesCardComponent } from './components/heroes-card/heroes-card.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
+import { DelHeroeDialogComponent } from './components/del-heroe-dialog/del-heroe-dialog.component';
 
 
 
@@ -27,7 +28,8 @@ import { ImagenPipe } from './pipes/imagen.pipe';
     HomeComponent,
     ListadoComponent,
     HeroesCardComponent,
-    ImagenPipe
+    ImagenPipe,
+    DelHeroeDialogComponent
   ],
   imports: [
     CommonModule,
